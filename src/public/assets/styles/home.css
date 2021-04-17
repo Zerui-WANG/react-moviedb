@@ -1,0 +1,67 @@
+.header-slides {
+    width: 100%;
+    height: 500px;
+}
+
+.header-slides-img {
+    height: 550px;
+}
+
+.faplay {
+    font-size: 95px;
+    color: #1A5276;
+    opacity: 0.7;
+}
+
+.header-slides-title {
+    text-align: center;
+    font-size: 45px;
+}
+
+.list-inline-item .btn-outline-info {
+    font-size: 13px;
+    color: #5a606b;
+    border: 1 px solid #5a606b;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    font-weight: 500;
+}
+
+.list-inline-item .btn-outline-info:hover {
+    color: white;
+    border-color: white;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.list-inline-item .btn-outline-info:focus {
+    background-color: #5DADE2;
+    color: white;
+}
+
+.movieList-title{
+    font-weight: bolder;
+}
+
+.font-weight-light {
+    color: grey;
+}
+
+.footer {
+    border-top: 1px solid #5a606b;
+}
+
+.social-media {
+    color: #2ECC71;
+}
+
+.arrow_circle {
+    color: #CCFFFF;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.arrow_circle:hover {
+    color: #82E0AA;
+    transition: all 0.3s ease-in-out;
+}
