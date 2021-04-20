@@ -26,7 +26,7 @@ export function Home() {
         const fectchAPI = async () => {
             setNowPlaying(await fetchMovies());
             setGenres(await fetchGenre());
-            setMovieByGenre(await fetchMovieByGenre(28));
+            setMovieByGenre(await fetchMovieByGenre(35));
             setPersons(await fetchPersons());
             setTopRated(await fetchTopRatedMovie());
         };
@@ -34,29 +34,38 @@ export function Home() {
         fectchAPI();
     }, []);
 
+    const handleGenreClick = async (genre_id) => {
+        setMovieByGenre(await fetchMovieByGenre(genre_id));
+    };
+
     const movies = nowPlaying.slice(0, 5).map((item, index) => {
         return (
-            <div class="header-slides" key={index}>
+            <div class="header_slides" key={index}>
                 <div className="carousel-center">
-                    <img class="header-slides-img" src={item.backPoster} alt={item.title} />
+                    <img class="header_slides_img" src={item.backPoster} alt={item.title} />
                 </div>
                 <div className="carousel-center">
                     <i class="faplay"><FaPlay/></i>
                 </div>
-                <div className="carousel-caption" class="header-slides-title">{item.title}</div>
+                <div className="carousel-caption">{item.title}</div>
             </div>
         );
-    })
+    });
 
     const genreList = genres.map((item, index) => {
         return (
             <li className="list-inline-item" key={index}>
-                <button type="button" className="btn btn-outline-info">
+                <button 
+                    className="btn btn-outline-info"
+                    onClick={() => {
+                        handleGenreClick(item.id);
+                    }}
+                >
                     {item.name}
                 </button>
             </li>
         );
-    })
+    });
 
     const movieList = movieByGenre.slice(0, 4).map((item, index) => {
         return (
@@ -64,7 +73,6 @@ export function Home() {
                 <div className="card">
                     <Link to={`/movie/${item.id}`}>
                         <img className="img-fluid" src={item.poster} alt={item.title}/>
-                        
                     </Link>
                 </div>
                 <div className="mt-3">
@@ -103,7 +111,7 @@ export function Home() {
                 </div>
             </div>
         );
-    })
+    });
 
     return (
         <div className="container">
